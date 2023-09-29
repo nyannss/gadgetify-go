@@ -7,4 +7,7 @@
 
 test/*.pyc
 config.json
+
+# TEMPORARY FILES
+tmp
 vendor/*
