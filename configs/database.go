@@ -25,5 +25,5 @@ func InitDatabase() {
 	if err != nil {
 		panic("Error connecting database")
 	}
-	initMigrate()
+	// initMigrate()
 }
