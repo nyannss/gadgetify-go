@@ -15,5 +15,7 @@ func InitRoutes(e *echo.Echo) {
 
 	e.GET("/", AuthorController.GetAuthor)
 
-	e.GET("/product", ProductController.GetAllProducts)
+	e.GET("/product", ProductController.GetAll)
+	e.POST("/product", ProductController.CreateNew)
+	e.DELETE("/product/:id", ProductController.Delete)
 }

@@ -7,13 +7,13 @@ import (
 )
 
 type Product struct {
-	ID          string            `json:"id"  gorm:"type:uuid;default:uuid_generate_v4();primaryKey;"`
-	Name        string            `json:"name"`
-	SKU         string            `json:"sku"`
-	ImageURL    sql.NullString    `json:"image_url" gorm:"type:varchar(255);"`
-	Price       uint32            `json:"price"`
-	Description string            `json:"description" gorm:"type:text;"`
-	Stock       uint32            `json:"stock" gorm:"default:0;"`
+	ID          string            `json:"id"  gorm:"type:uuid;default:uuid_generate_v4();primaryKey;" `
+	Name        string            `json:"name" form:"name" validate:"required,min=5,max=150"`
+	SKU         string            `json:"sku" form:"sku" validate:"required,min=5,max=50"`
+	ImageURL    *string           `json:"image_url" gorm:"type:varchar(255);"`
+	Price       uint32            `json:"price" form:"price" validate:"required,min=0"`
+	Description string            `json:"description" gorm:"type:text;" form:"description" validate:"max=5000"`
+	Stock       uint32            `json:"stock" gorm:"default:0;" form:"stock" validate:"required,min=0"`
 	CategoryID  sql.NullString    `json:"category_id"`
 	Category    category.Category `json:"category"`
 }

@@ -12,6 +12,7 @@ func main() {
 	// initialization environment
 	configs.InitEnvironment()
 	configs.InitDatabase()
+	configs.InitCloudinary()
 
 	// create new echo instance
 	e := echo.New()

@@ -11,7 +11,7 @@ import (
 	"github.com/labstack/echo/v4"
 )
 
-func GetAllProducts(c echo.Context) error {
+func GetAll(c echo.Context) error {
 	var (
 		products  []ProductModel.Product
 		response  BaseModel.BaseResponse
