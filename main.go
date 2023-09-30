@@ -10,7 +10,7 @@ import (
 
 func main() {
 	// initialization environment
-	configs.InitEnvironment()
+	// configs.InitEnvironment()
 	configs.InitDatabase()
 	configs.InitCloudinary()
 
